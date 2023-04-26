@@ -24,6 +24,7 @@
 % The paracol package lets you typeset columns of text in parallel
 \usepackage{paracol}
 
+
 % Change the font if you want to, depending on whether
 % you're using pdflatex or xelatex/lualatex
 \ifxetexorluatex
@@ -53,6 +54,18 @@
 \colorlet{accent}{PastelRed}
 \colorlet{emphasis}{SlateGrey}
 \colorlet{body}{LightGrey}
+
+
+% Custom project type
+
+\newcommand{\cvproject}[5]{{\large\color{emphasis}{\href{#5}{#1}\par}} \smallskip\normalsize \ifstrequal{#2}{}{}{ \textbf{\color{accent}#2}\par \smallskip} \ifstrequal{#3}{}{}{{\small\makebox[0.5\linewidth][l]{\faCalendar~#3}}}\ifstrequal{#4}{}{}{{\small\makebox[0.5\linewidth][l]{\faMapMarker~#4}}}\par \medskip\normalsize }
+
+
+
+% \newcommand{\cvproject}[2]{%
+%   \large\color{emphasis}{\href{#2}{#1}\par}
+%   \smallskip\normalsize
+% }
 
 % Change some fonts, if necessary
 \renewcommand{\namefont}{\Huge\rmfamily\bfseries}
@@ -95,7 +108,7 @@
   % \homepage{www.homepage.com}
   % \twitter{@twitterhandle}
   % \linkedin{your_id}
-  \github{github.com/alexthepolygonal}
+  \github{alexthepolygonal}
   % \orcid{0000-0000-0000-0000}
   %% You can add your own arbitrary detail with
   %% \printinfo{symbol}{detail}[optional hyperlink prefix]
@@ -142,7 +155,7 @@
 \quad Currently learning the language\\
 \smallskip
 \cvskill{Concurrency}{3}
-\quad Basics, MESI protocol, C++ memory model,\\ 
+\quad The low level: MESI protocol, C++ memory model,\\ 
 \quad simplest lockfree algorithms\\
 \smallskip
 
@@ -166,7 +179,7 @@
 \cvskill{Linear algebra}{5}
 \smallskip
 \cvskill{Category Theory}{4}
-\quad Yoneda, Left adjoints preserve colimits, Monads
+\quad Basics: Yoneda, left adjoints preserve colimits, monads
 \medskip
 
 \cvsubsection{Advanced Mathematics}
@@ -183,7 +196,7 @@
 
 \cvsection{Projects}
 
-\cvevent{Online Space Shooter}{}{}{github.com/StarikTenger/spaceSodomy2/}
+\cvproject{Online Space Shooter}{}{}{}{https://github.com/StarikTenger/spaceSodomy2/}
 \begin{itemize}
 \item A 2D space shooter game, in which objects fully follow Newtons laws. Very fun.
 \item Collaborative work with friends
@@ -192,7 +205,7 @@
 
 \divider
 
-\cvevent{C++ stateful metaprogramming library}{}{}{github.com/AlexThePolygonal/Compile-time-variables-in-cpp}
+\cvproject{C++ stateful metaprogramming library}{}{}{}{https://github.com/AlexThePolygonal/Compile-time-variables-in-cpp}
 Work in progress. This is a very small library which enables one to write template metaprogramming code in an imperative style, with variables, ifs and for-while loops operating on types and constexpr values.
 
 % \medskip
@@ -276,7 +289,11 @@ Work in progress. This is a very small library which enables one to write templa
 \cvskill{Russian (native)}{5}
 \divider
 
-\cvskill{English}{5}
+\cvskill{English (C1)}{5}
+
+\divider
+
+\cvskill{French (A2)}{1.5}
 
 %% Yeah I didn't spend too much time making all the
 %% spacing consistent... sorry. Use \smallskip, \medskip,
